@@ -4,3 +4,7 @@ class MetricConverter(object):
         miles = round(calculateMiles,6)  
             
         return miles
+    
+    def CelsiusToFahrenheit(celsius): 
+        fahrenheit = (celsius * 1.8) + 32
+        return fahrenheit
