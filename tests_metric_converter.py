@@ -31,3 +31,25 @@ class TestMetricConverter(unittest.TestCase):
             result = MetricConverter.KilogramToPound(kilogram)
             # Assert
             self.assertEqual(result, pounds)
+
+    def test_LitersToGallons_GivenLiters_ShouldReturnUSGallons(self):
+        volume = { 3.785411784:1, 7.57082:2, 45.4249:12, 75.7082:20, 124.919:33, 223.339:59 }
+        for l, gallons in volume.items():
+            # Arrange
+            liters = l
+            targetUnit = "US"
+            # Act
+            result = MetricConverter.LitersToGallons(liters, targetUnit)
+            # Assert
+            self.assertEqual(result, gallons)
+
+    def test_LitersToGallons_GivenLiters_ShouldReturnUKGallons(self):
+        volume = { 4.54609:1, 9.09218:2, 13.63827:3, 45.4609:10 }
+        for l, gallons in volume.items():
+            # Arrange
+            liters = l
+            targetUnit = "UK"
+            # Act
+            result = MetricConverter.LitersToGallons(liters, targetUnit)
+            # Assert
+            self.assertEqual(result, gallons)

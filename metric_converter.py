@@ -12,3 +12,12 @@ class MetricConverter(object):
         claculatePounds = kilogram / 0.45359237
         pounds = round(claculatePounds,3)
         return pounds
+    
+    def LitersToGallons(liters, targetUnit):
+        if targetUnit == "US":
+            calculateGallons = liters / 3.785411784
+        if targetUnit == "UK":
+            calculateGallons = liters / 4.54609
+        
+        gallons = round(calculateGallons)
+        return gallons
