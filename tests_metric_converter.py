@@ -21,3 +21,13 @@ class TestMetricConverter(unittest.TestCase):
             result = MetricConverter.CelsiusToFahrenheit(celsius)
             # Assert
             self.assertEqual(result, fahrenheit)
+
+    def test_KilogramToPound_GivenKilogram_ShouldReturnPound(self):
+        weight = { 1:2.205, 5:11.023, 10:22.046, 13:28.66, 19:41.888, 30:66.139, 35:77.162 }
+        for kg, pounds in weight.items():
+            # Arrange
+            kilogram = kg
+            # Act
+            result = MetricConverter.KilogramToPound(kilogram)
+            # Assert
+            self.assertEqual(result, pounds)
