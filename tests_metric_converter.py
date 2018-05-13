@@ -53,3 +53,36 @@ class TestMetricConverter(unittest.TestCase):
             result = MetricConverter.LitersToGallons(liters, targetUnit)
             # Assert
             self.assertEqual(result, gallons)
+
+    def test_LitersToGallons_GivenNull_ShouldReturnZero(self):
+        # Arrange
+        liters = None
+        targetUnit = "UK"
+        # Act
+        result = MetricConverter.LitersToGallons(liters, targetUnit)
+        # Assert
+        self.assertEqual(result, 0)
+
+    def test_KilometersToMiles_GivenNull_ShouldReturnZero(self):
+        # Arrange
+        kilometers = None
+        # Act
+        result = MetricConverter.KilometersToMiles(kilometers)
+        # Assert
+        self.assertEqual(result, 0)
+
+    def test_CelsiusToFahrenheit_GivenNull_ShouldReturnZero(self):
+        # Arrange
+        celsius = None
+        # Act
+        result = MetricConverter.CelsiusToFahrenheit(celsius)
+        # Assert
+        self.assertEqual(result, 0)
+
+    def test_KilogramToPound_GivenNull_ShouldReturnZero(self):
+        # Arrange
+        kilogram = None
+        # Act
+        result = MetricConverter.KilogramToPound(kilogram)
+        # Assert
+        self.assertEqual(result, 0)
