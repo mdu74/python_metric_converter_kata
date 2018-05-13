@@ -1,7 +1,7 @@
 from metric_calculation import MetricCalculator
 from metric_validation import MetricInputValidator
 
-class MetricConverter(object):
+class MetricConverter():
     def KilometersToMiles(kilometers):
         if MetricInputValidator.MetricIsNullOrStringFrom(kilometers):
             return 0
