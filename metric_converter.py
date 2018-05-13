@@ -1,4 +1,4 @@
-from metric_calculator import MetricCalculator
+from metric_calculation import MetricCalculator
 from metric_validation import MetricInputValidator
 
 class MetricConverter(object):
