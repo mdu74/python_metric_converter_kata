@@ -1,29 +1,30 @@
 from metric_calculator import MetricCalculator
+from metric_validation import MetricInputValidator
 
 class MetricConverter(object):
     def KilometersToMiles(kilometers):
-        if kilometers == None or isinstance(kilometers, str):
+        if MetricInputValidator.MetricIsNullOrStringFrom(kilometers):
             return 0
 
         miles = MetricCalculator.CalculateMilesFrom(kilometers)          
         return miles
     
     def CelsiusToFahrenheit(celsius): 
-        if celsius == None or isinstance(celsius, str):
+        if MetricInputValidator.MetricIsNullOrStringFrom(celsius):
             return 0
 
         fahrenheit = MetricCalculator.CalculateFahrenheitFrom(celsius)
         return fahrenheit
     
     def KilogramToPound(kilogram): 
-        if kilogram == None or isinstance(kilogram, str):
+        if MetricInputValidator.MetricIsNullOrStringFrom(kilogram):
             return 0
 
         pounds = MetricCalculator.CalculatePoundsFrom(kilogram)
         return pounds
     
     def LitersToGallons(liters, targetUnit):
-        if liters == None or isinstance(liters, str):
+        if MetricInputValidator.MetricIsNullOrStringFrom(liters):
             return 0
 
         if targetUnit == "US":
