@@ -1,23 +1,23 @@
+from metric_calculator import MetricCalculator
+
 class MetricConverter(object):
     def KilometersToMiles(kilometers):
-        calculateMiles = kilometers * 0.621371  
-        miles = round(calculateMiles,6)              
+        miles = MetricCalculator.CalculateMilesFrom(kilometers)          
         return miles
     
     def CelsiusToFahrenheit(celsius): 
-        fahrenheit = (celsius * 1.8) + 32
+        fahrenheit = MetricCalculator.CalculateFahrenheitFrom(celsius)
         return fahrenheit
     
     def KilogramToPound(kilogram): 
-        claculatePounds = kilogram / 0.45359237
-        pounds = round(claculatePounds,3)
+        pounds = MetricCalculator.CalculatePoundsFrom(kilogram)
         return pounds
     
     def LitersToGallons(liters, targetUnit):
         if targetUnit == "US":
-            calculateGallons = liters / 3.785411784
+            calculateGallons = MetricCalculator.CalculateUSGallonsFrom(liters)
         if targetUnit == "UK":
-            calculateGallons = liters / 4.54609
+            calculateGallons = MetricCalculator.CalculateUKGallonsFrom(liters)
         
         gallons = round(calculateGallons)
         return gallons
