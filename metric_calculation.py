@@ -1,4 +1,4 @@
-class MetricCalculator():
+class MetricCalculator:
     def CalculateFahrenheitFrom(celsius):
         return (celsius * 1.8) + 32
 
